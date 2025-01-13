@@ -142,15 +142,6 @@ __attribute__((swift_name("KotlinBoolean")))
 + (instancetype)numberWithBool:(BOOL)value;
 @end
 
-__attribute__((objc_subclassing_restricted))
-__attribute__((swift_name("Greeting")))
-@interface LCIGreeting : LCIBase
-- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
-+ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
-- (NSString *)greet __attribute__((swift_name("greet()")));
-- (NSString *)name __attribute__((swift_name("name()")));
-@end
-
 __attribute__((swift_name("Platform")))
 @protocol LCIPlatform
 @required
@@ -166,9 +157,16 @@ __attribute__((swift_name("IOSPlatform")))
 @end
 
 __attribute__((objc_subclassing_restricted))
+__attribute__((swift_name("OSPlatform")))
+@interface LCIOSPlatform : LCIBase
+- (instancetype)init __attribute__((swift_name("init()"))) __attribute__((objc_designated_initializer));
++ (instancetype)new __attribute__((availability(swift, unavailable, message="use object initializers instead")));
+- (NSString *)getName __attribute__((swift_name("getName()")));
+@end
+
+__attribute__((objc_subclassing_restricted))
 __attribute__((swift_name("Platform_iosKt")))
 @interface LCIPlatform_iosKt : LCIBase
-+ (NSString *)getName __attribute__((swift_name("getName()")));
 + (id<LCIPlatform>)getPlatform __attribute__((swift_name("getPlatform()")));
 @end
 

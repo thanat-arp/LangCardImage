@@ -1,0 +1,8 @@
+framework module LangCardImage {
+    umbrella header "LangCardImage.h"
+
+    export *
+    module * { export * }
+
+    use Foundation
+}
